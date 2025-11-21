@@ -1,14 +1,12 @@
-// Load semua file secara otomatis dari folder gallery
 const galleryFolder = 'gallery/';
 
 
-// LIST FILE MANUAL (ISI SENDIRI)
+// Tambahkan nama file foto/video di sini
 const files = [
 'photo1.jpg',
 'photo2.jpg',
 'video1.mp4',
 'video2.mp4'
-// tambahkan lagi sesuai kebutuhan
 ];
 
 
@@ -17,6 +15,7 @@ const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
 const modalVideo = document.getElementById("modalVideo");
 const closeBtn = document.getElementById("closeBtn");
+const downloadBtn = document.getElementById("downloadBtn");
 
 
 files.forEach(file => {
@@ -25,7 +24,6 @@ const item = document.createElement(ext === 'mp4' ? 'video' : 'img');
 
 
 item.src = galleryFolder + file;
-item.classList.add('gallery-item');
 if (ext === 'mp4') item.muted = true;
 
 
@@ -38,12 +36,10 @@ gallery.appendChild(item);
 
 function openModal(file) {
 modal.style.display = "block";
-
-
 const ext = file.split('.').pop().toLowerCase();
 
 
-if (ext === "mp4") {
+if (ext === 'mp4') {
 modalImg.style.display = "none";
 modalVideo.style.display = "block";
 modalVideo.src = galleryFolder + file;
@@ -52,6 +48,9 @@ modalVideo.style.display = "none";
 modalImg.style.display = "block";
 modalImg.src = galleryFolder + file;
 }
+
+
+downloadBtn.href = galleryFolder + file;
 }
 
 
