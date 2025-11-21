@@ -1,0 +1,25 @@
+.floating-hearts {
+position: fixed;
+width: 100%;
+height: 100%;
+pointer-events: none;
+overflow: hidden;
+top: 0;
+left: 0;
+}
+
+
+.floating-hearts::before, .floating-hearts::after {
+content: "";
+position: absolute;
+width: 20px;
+height: 20px;
+background: url('https://emojiapi.dev/api/v1/1f496.svg') no-repeat center/contain;
+animation: float 6s linear infinite;
+}
+
+
+@keyframes float {
+0% { transform: translateY(100vh) scale(0.5) rotate(0deg); }
+100% { transform: translateY(-10vh) scale(1.1) rotate(360deg); }
+}
