@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Romantic Photobooth Gallery</title>
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="romantic-animations.css" />
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="romantic-animations.css">
 </head>
 <body>
+
+
+<audio id="bgMusic" src="music/love-theme.mp3" autoplay loop></audio>
+
+
 <div class="header">
-<h1>💕 Memory Gallery 💕</h1>
+<h1 class="moving-text">💕 Memory Gallery 💕</h1>
 <p>Kenangan manis dalam satu tempat</p>
 </div>
 
@@ -19,8 +24,9 @@
 
 <div class="modal" id="modal">
 <span class="close" id="closeBtn">&times;</span>
-<img id="modalImg" class="modal-content" />
+<img id="modalImg" class="modal-content">
 <video id="modalVideo" class="modal-content" controls></video>
+<a id="downloadBtn" class="download-btn" href="#" download>Download</a>
 </div>
 
 
