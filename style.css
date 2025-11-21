@@ -9,8 +9,17 @@ overflow-x: hidden;
 .header {
 text-align: center;
 padding: 20px;
-background: #ffb3c6;
+background: linear-gradient(135deg, #ffb3c6, #ffccd5);
 color: white;
+}
+
+
+.moving-text {
+animation: moveText 5s linear infinite alternate;
+}
+@keyframes moveText {
+0% { transform: translateX(-10px); }
+100% { transform: translateX(10px); }
 }
 
 
@@ -26,12 +35,13 @@ gap: 10px;
 width: 100%;
 border-radius: 12px;
 cursor: pointer;
-transition: transform 0.2s;
+transition: transform 0.2s, box-shadow 0.2s;
 }
 
 
 .gallery img:hover, .gallery video:hover {
 transform: scale(1.05);
+box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
 }
 
 
@@ -45,6 +55,7 @@ top: 0;
 width: 100%;
 height: 100%;
 background-color: rgba(0, 0, 0, 0.8);
+text-align: center;
 }
 
 
@@ -52,15 +63,4 @@ background-color: rgba(0, 0, 0, 0.8);
 display: block;
 margin: auto;
 max-width: 90%;
-max-height: 80%;
-}
-
-
-.close {
-position: absolute;
-top: 20px;
-right: 30px;
-font-size: 40px;
-color: white;
-cursor: pointer;
 }
